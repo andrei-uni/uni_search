@@ -1,20 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:uni_search/app/initialization/app_runner.dart';
 
 void main() {
-  runApp(const MainApp());
-}
-
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
-    );
-  }
+  AppRunner().run();
 }

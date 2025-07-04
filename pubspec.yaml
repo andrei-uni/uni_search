@@ -1,6 +1,6 @@
 name: uni_search
 description: "A new Flutter project."
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0
 
 environment:
@@ -10,10 +10,32 @@ dependencies:
   flutter:
     sdk: flutter
 
+  dio: ^5.8.0+1
+
+  flutter_bloc: ^9.1.1
+
+  infinite_scroll_pagination: ^5.1.0
+  toastification: ^3.0.3
+
+  rxdart: ^0.28.0
+  url_launcher: ^6.3.1
+
+  logger: ^2.6.0
+
+  retrofit: ^4.5.0
+  json_annotation: ^4.9.0
+  freezed_annotation: ^3.1.0
+  theme_tailor_annotation: ^3.0.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
+  build_runner: ^2.4.15
+  json_serializable: ^6.9.5
+  retrofit_generator: ^9.2.0
+  freezed: ^3.0.6
+  theme_tailor: ^3.0.3
 
 flutter:
   uses-material-design: true

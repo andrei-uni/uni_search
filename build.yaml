@@ -1,0 +1,17 @@
+targets:
+  $default:
+    builders:
+      json_serializable:
+        options:
+          create_factory: false
+          create_to_json: false
+          field_rename: snake
+      freezed:
+        options:
+          equal: false
+      theme_tailor:
+        generate_for:
+          include:
+            - lib/app/theme/**
+        options:
+          theme_getter: on_theme_data
