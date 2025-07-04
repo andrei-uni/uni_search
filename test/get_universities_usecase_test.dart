@@ -18,10 +18,7 @@ class TestUniversitySearchRepository implements UniversitySearchRepository {
     required int limit,
     required int offset,
   }) async {
-    if (nameResults == null) {
-      return null;
-    }
-    return nameResults!.skip(offset).take(limit).toList();
+    return nameResults?.skip(offset).take(limit).toList();
   }
 
   @override
@@ -30,10 +27,7 @@ class TestUniversitySearchRepository implements UniversitySearchRepository {
     required int limit,
     required int offset,
   }) async {
-    if (countryResults == null) {
-      return null;
-    }
-    return countryResults!.skip(offset).take(limit).toList();
+    return countryResults?.skip(offset).take(limit).toList();
   }
 }
 
@@ -66,9 +60,7 @@ class MultiPageRepo implements UniversitySearchRepository {
     if (_page >= countryPages.length) {
       return [];
     }
-    final res = countryPages[_page];
-    _page++;
-    return res;
+    return countryPages[_page++];
   }
 }
 

@@ -82,21 +82,13 @@ class _SimpleBlocObserver extends BlocObserver {
 class _SimpleLogPrinter extends LogPrinter {
   @override
   List<String> log(LogEvent event) {
-    final level = event.level.toString().toUpperCase().split('.').last;
+    final level = event.level.toString().split('.').last.toUpperCase();
     final timestamp = DateTime.now().toIso8601String();
 
-    final lines = <String>[
+    return [
       '[$timestamp] [$level] ${event.message}',
+      if (event.error != null) '[$timestamp] [ERROR] Error: ${event.error}',
+      if (event.stackTrace != null) '[$timestamp] [STACK] ${event.stackTrace}',
     ];
-
-    if (event.error != null) {
-      lines.add('[$timestamp] [ERROR] Error: ${event.error}');
-    }
-
-    if (event.stackTrace != null) {
-      lines.add('[$timestamp] [STACK] ${event.stackTrace}');
-    }
-
-    return lines;
   }
 }

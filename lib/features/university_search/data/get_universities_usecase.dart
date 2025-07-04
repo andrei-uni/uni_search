@@ -41,6 +41,8 @@ class GetUniversitiesUsecase {
       result.addAll(universitiesByName);
       _fetchedUniversitiesByName.addAll(universitiesByName);
 
+      assert(universitiesByName.length <= limit);
+
       if (universitiesByName.length == limit) {
         return result;
       }
@@ -72,9 +74,8 @@ class GetUniversitiesUsecase {
         }
 
         result.add(university);
-        neededUniversitiesCount--;
 
-        if (neededUniversitiesCount == 0) {
+        if (--neededUniversitiesCount == 0) {
           break fetchLoop;
         }
       }

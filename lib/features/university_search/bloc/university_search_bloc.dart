@@ -49,7 +49,7 @@ class UniversitySearchBloc extends Bloc<UniversitySearchEvent, UniversitySearchS
 
     final offset = pagingState.length;
 
-    final newUniversities = await _getUniversitiesUsecase(
+    final newUniversities = await _getUniversitiesUsecase.call(
       limit: _universitiesLimit,
       offset: offset,
       searchQuery: state.searchQuery,
